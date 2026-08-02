@@ -74,11 +74,7 @@
   .pos{ color:var(--green); }
   .neg{ color:var(--red); }
   .diff-value{ font-size:30px; }
-  .hero-input{
-    font-size:22px; font-weight:700; padding:4px 0; background:transparent; border:none; text-align:left;
-    color:var(--text); width:100%; -moz-appearance:textfield;
-  }
-  .hero-input:focus{ outline:none; }
+  .hero-value{ font-size:26px; }
   .hero-card{ position:relative; }
 
   .section-title{ font-size:15px; font-weight:650; margin:30px 0 14px 0; display:flex; align-items:center; justify-content:space-between; }
@@ -179,7 +175,7 @@
     .grid.cards{ grid-template-columns:1fr 1fr; gap:10px; }
     .grid.cards .hero-card{ grid-column:1 / -1; }
     .card{ padding:14px 16px; }
-    .hero-input{ font-size:30px; }
+    .hero-value{ font-size:30px; }
     .diff-value{ font-size:22px; }
     .stat-value{ font-size:19px; }
     .stat-label{ font-size:11px; }
@@ -446,12 +442,18 @@ function currentRealMonthKey(){
   if(y > endY){ y=endY; m=12; }
   return monthKey(y,m);
 }
-// "Ist" right now: manual override if the user set one, otherwise the Ist-value of the latest tracked month.
+// "Ist" right now: the tracked value of the actual current calendar month (from Monatliches Tracking).
+// Falls back to the most recently tracked month if the current month has no entry yet.
+function currentIstInfo(){
+  const nowKey = currentRealMonthKey();
+  const nowVal = istForMonth(nowKey);
+  if(nowVal !== null) return { value: nowVal, key: nowKey, isCurrentMonth: true };
+  const lk = latestTrackedKey();
+  if(lk !== null) return { value: istForMonth(lk), key: lk, isCurrentMonth: false };
+  return { value: null, key: null, isCurrentMonth: false };
+}
 function currentIstValue(){
-  const ov = STATE.currentPortfolioOverride;
-  if(ov !== null && ov !== undefined && ov !== '') return Number(ov);
-  const k = latestTrackedKey();
-  return k ? istForMonth(k) : null;
+  return currentIstInfo().value;
 }
 function diffBadge(diff, soll){
   if(diff===null||diff===undefined) return '–';
@@ -530,19 +532,25 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
 function renderDashboard(){
   const nowKey = currentRealMonthKey();
   const {y:nowY, m:nowM} = parseKey(nowKey);
-  const istNow = currentIstValue();
+  const istInfo = currentIstInfo();
+  const istNow = istInfo.value;
   const sollNow = sollForMonth(nowKey);
   const diff = (istNow!==null && sollNow!==null) ? (istNow - sollNow) : null;
   const diffPct = (diff!==null && sollNow) ? (diff/sollNow*100) : null;
 
-  const latestKey = latestTrackedKey();
-  const isOverride = STATE.currentPortfolioOverride !== null && STATE.currentPortfolioOverride !== undefined && STATE.currentPortfolioOverride !== '';
+  let istSub = 'Noch keine Daten erfasst';
+  if(istInfo.key !== null){
+    const {y:iy, m:im} = parseKey(istInfo.key);
+    istSub = istInfo.isCurrentMonth
+      ? 'aus Tracking: '+MONTH_NAMES[im-1]+' '+iy
+      : 'letzter erfasster Monat: '+MONTH_NAMES[im-1]+' '+iy;
+  }
 
   const statsHtml = `
     <div class="card hero-card">
       <div class="stat-label">Portfolio-Wert</div>
-      <input type="number" step="0.01" id="ist-now-input" class="hero-input" value="${istNow!==null ? istNow : ''}" placeholder="0">
-      <div class="stat-sub">${isOverride ? 'manuell eingetragen' : (latestKey ? 'aus Tracking: '+MONTH_NAMES[parseKey(latestKey).m-1]+' '+parseKey(latestKey).y : 'Noch keine Daten erfasst')}</div>
+      <div class="stat-value hero-value">${istNow!==null ? fmtEUR(istNow) : '–'}</div>
+      <div class="stat-sub">${istSub}</div>
     </div>
     <div class="card">
       <div class="stat-label">Soll aktuell</div>
@@ -557,11 +565,6 @@ function renderDashboard(){
   `;
   document.getElementById('dash-stats').innerHTML = statsHtml;
   document.getElementById('dash-date').textContent = 'Stand: ' + new Date().toLocaleDateString('de-DE', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  document.getElementById('ist-now-input').addEventListener('change', (e)=>{
-    STATE.currentPortfolioOverride = e.target.value === '' ? null : Number(e.target.value);
-    saveState(); renderDashboard();
-  });
 
   // year table
   const years = yearsRange();
