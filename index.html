@@ -187,7 +187,13 @@
 
     .field-row{ grid-template-columns:1fr; }
     .asset-row{ grid-template-columns:1fr 100px 34px; gap:8px; }
-    .month-nav{ flex-wrap:wrap; }
+    /* Month nav: keep prev-arrow / picker / next-arrow on a single row regardless of month-name
+       length. The bold month title duplicated the dropdown's text and was what pushed the
+       next-arrow onto its own line, so it's hidden here - the dropdown already shows the month. */
+    .month-nav{ flex-wrap:nowrap; gap:8px; }
+    .month-nav .arrow{ flex:0 0 34px; }
+    .month-title{ display:none; }
+    .month-nav select{ flex:1; min-width:0; width:auto; text-align:center; }
     .chart-card{ padding:14px 12px; }
     .chart-svg-box{ height:220px; }
     .section-title{ font-size:14px; margin:24px 0 12px 0; }
