@@ -27,9 +27,11 @@
     --radius:14px;
     --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   }
-  *{box-sizing:border-box;}
+  /* touch-action is NOT inherited in CSS - it must be set on every element (or via this
+     universal rule) to actually suppress double-tap-to-zoom everywhere, not just on html/body. */
+  *{ box-sizing:border-box; touch-action:manipulation; }
   html,body{
-    height:100%; background:#0d0f14; overscroll-behavior:none; touch-action:manipulation;
+    height:100%; background:#0d0f14; overscroll-behavior:none;
   }
   body{
     margin:0; font-family:var(--font); background:linear-gradient(180deg,#0d0f14,#12141c 60%); color:var(--text);
