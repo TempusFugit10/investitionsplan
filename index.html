@@ -1,3 +1,5 @@
+
+Investitionsplan index v3 · HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -34,7 +36,7 @@
     -webkit-font-smoothing:antialiased;
   }
   .app{ display:flex; height:100vh; overflow:hidden; }
-
+ 
   /* Sidebar */
   .sidebar{
     width:230px; flex:0 0 230px; background:var(--bg-soft); border-right:1px solid var(--card-border);
@@ -52,18 +54,18 @@
   .nav button.active{ background:var(--accent-soft); color:#cfe0ff; }
   .nav button .ic{ width:18px; text-align:center; opacity:.9; }
   .sidebar-foot{ margin-top:auto; padding:10px 8px; font-size:11px; color:#5c6377; }
-
+ 
   /* Main */
   .main{ flex:1; overflow-y:auto; padding:28px 34px 60px 34px; }
   .page{ display:none; max-width:1180px; margin:0 auto; }
   .page.active{ display:block; animation:fade .25s ease; }
   @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
-
+ 
   h1{ font-size:22px; margin:0 0 22px 0; font-weight:650; }
-
+ 
   .grid{ display:grid; gap:16px; }
   .grid.cards{ grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); margin-bottom:22px; }
-
+ 
   .card{
     background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius); padding:18px 20px;
   }
@@ -72,22 +74,22 @@
   .stat-sub{ font-size:12.5px; color:var(--text-dim); margin-top:6px; }
   .pos{ color:var(--green); }
   .neg{ color:var(--red); }
-
+ 
   .section-title{ font-size:15px; font-weight:650; margin:30px 0 14px 0; display:flex; align-items:center; justify-content:space-between; }
-
+ 
   table{ width:100%; border-collapse:collapse; font-size:13.5px; }
   th{ text-align:left; color:var(--text-dim); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:.3px; padding:8px 12px; border-bottom:1px solid var(--card-border); }
   td{ padding:9px 12px; border-bottom:1px solid #21252f; }
   tr:last-child td{ border-bottom:none; }
   .tbl-wrap{ background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius); overflow:hidden; }
-
+ 
   input[type=text], input[type=number], select{
     background:#12141c; border:1px solid #2a2f3d; color:var(--text); border-radius:8px; padding:7px 10px; font-size:13px; font-family:var(--font);
     width:100%;
   }
   input:focus, select:focus{ outline:none; border-color:var(--accent); }
   input[type=number]{ text-align:right; }
-
+ 
   .btn{
     all:unset; cursor:pointer; background:var(--accent); color:#fff; padding:9px 16px; border-radius:9px; font-size:13px; font-weight:600;
     display:inline-flex; align-items:center; gap:6px;
@@ -99,41 +101,41 @@
   .btn.danger:hover{ background:var(--red-soft); }
   .btn.small{ padding:5px 10px; font-size:12px; }
   .btn.ghost{ background:transparent; color:var(--accent); padding:6px 8px; }
-
+ 
   .row-actions{ display:flex; gap:8px; align-items:center; }
-
+ 
   .month-nav{ display:flex; align-items:center; gap:10px; margin-bottom:18px; }
   .month-nav select{ width:auto; }
   .month-nav .arrow{ all:unset; cursor:pointer; width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:8px; background:#1f2330; color:var(--text); }
   .month-nav .arrow:hover{ background:#272c3a; }
   .month-title{ font-size:16px; font-weight:650; margin-right:auto; }
-
+ 
   .asset-row{ display:grid; grid-template-columns:1fr 160px 40px; gap:10px; align-items:center; margin-bottom:8px; }
   .asset-total{ display:flex; justify-content:space-between; margin-top:14px; padding-top:14px; border-top:1px solid var(--card-border); font-weight:650; font-size:14.5px; }
-
+ 
   .goal-card{ margin-bottom:14px; }
   .goal-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   .progress-bar{ height:8px; border-radius:5px; background:#262b39; margin-top:10px; overflow:hidden; }
   .progress-bar > div{ height:100%; background:linear-gradient(90deg,var(--accent),#8f6bf0); border-radius:5px; }
-
+ 
   .field{ margin-bottom:14px; }
   .field label{ display:block; font-size:12px; color:var(--text-dim); margin-bottom:6px; font-weight:600; }
   .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-
+ 
   .toolbar{ display:flex; gap:10px; margin-top:26px; flex-wrap:wrap; }
   .badge{ font-size:11px; padding:2px 8px; border-radius:20px; font-weight:650; }
   .badge.green{ background:var(--green-soft); color:var(--green); }
   .badge.red{ background:var(--red-soft); color:var(--red); }
   .badge.dim{ background:#262b39; color:var(--text-dim); }
-
+ 
   .chart-card{ background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius); padding:20px; margin-bottom:24px; }
   .chart-wrap{ position:relative; }
   .chart-svg-box{ width:100%; height:260px; }
-
+ 
   ::-webkit-scrollbar{ width:10px; height:10px; }
   ::-webkit-scrollbar-thumb{ background:#2a2f3d; border-radius:6px; }
   ::-webkit-scrollbar-track{ background:transparent; }
-
+ 
   .empty-hint{ color:var(--text-dim); font-size:13px; padding:20px; text-align:center; }
   .toast{
     position:fixed; bottom:22px; right:26px; background:#1f2330; border:1px solid #2f3444; color:var(--text);
@@ -145,7 +147,7 @@
   .year-block{ margin-bottom:10px; }
   .tbl-wrap{ overflow-x:auto; }
   .tbl-wrap table{ min-width:520px; }
-
+ 
   /* Phone layout: bottom tab bar instead of sidebar */
   @media (max-width: 720px){
     .app{ flex-direction:column; height:100vh; }
@@ -163,6 +165,17 @@
     .field-row{ grid-template-columns:1fr; }
     .asset-row{ grid-template-columns:1fr 110px 36px; }
     .month-nav{ flex-wrap:wrap; }
+ 
+    /* Etappenziele table: fit phone width, no horizontal scroll */
+    .etappen-tbl-wrap{ overflow-x:visible; }
+    .etappen-tbl-wrap table{ min-width:0; width:100%; table-layout:fixed; }
+    .etappen-tbl-wrap th, .etappen-tbl-wrap td{ padding:7px 5px; font-size:11.5px; word-break:break-word; }
+    .etappen-tbl-wrap th:nth-child(1), .etappen-tbl-wrap td:nth-child(1){ width:13%; }
+    .etappen-tbl-wrap th:nth-child(2), .etappen-tbl-wrap td:nth-child(2){ width:29%; }
+    .etappen-tbl-wrap th:nth-child(3), .etappen-tbl-wrap td:nth-child(3){ width:24%; }
+    .etappen-tbl-wrap th:nth-child(4), .etappen-tbl-wrap td:nth-child(4){ width:34%; }
+    .etappen-tbl-wrap .etappen-input{ max-width:100%; font-size:11.5px; padding:5px 4px; }
+    .etappen-tbl-wrap .reset-hint{ font-size:9.5px; }
   }
 </style>
 </head>
@@ -178,20 +191,21 @@
     </div>
     <div class="sidebar-foot">2026 – 2030 · lokal gespeichert</div>
   </div>
-
+ 
   <div class="main">
-
+ 
     <!-- DASHBOARD -->
     <div class="page active" id="page-dashboard">
       <h1>Übersicht</h1>
-
+      <div class="reset-hint" id="dash-date" style="margin:-14px 0 22px 0; font-size:13px;"></div>
+ 
       <div class="grid cards" id="dash-stats"></div>
-
+ 
       <div class="chart-card">
         <div class="section-title" style="margin-top:0;">Portfolio-Entwicklung: Soll vs. Ist</div>
         <div class="chart-wrap" id="chart-wrap"></div>
       </div>
-
+ 
       <div class="section-title">Jahresübersicht</div>
       <div class="tbl-wrap">
         <table>
@@ -200,37 +214,37 @@
         </table>
       </div>
     </div>
-
+ 
     <!-- ETAPPENZIELE -->
     <div class="page" id="page-etappen">
       <h1>Etappenziele</h1>
-
+ 
       <div class="section-title" style="margin-top:0;">Jahresziele (Portfolio-Endwert)</div>
-      <div class="tbl-wrap" style="margin-bottom:26px;">
+      <div class="tbl-wrap etappen-tbl-wrap" style="margin-bottom:26px;">
         <table>
           <thead><tr><th>Jahr</th><th>Soll (€)</th><th>Ist (€)</th><th>Differenz (€ / %)</th></tr></thead>
           <tbody id="etappen-table"></tbody>
         </table>
       </div>
     </div>
-
+ 
     <!-- MONATLICHES TRACKING -->
     <div class="page" id="page-monthly">
       <h1>Monatliches Tracking</h1>
-
+ 
       <div class="month-nav">
         <button class="arrow" id="m-prev">‹</button>
         <div class="month-title" id="m-title">—</div>
         <select id="m-select"></select>
         <button class="arrow" id="m-next">›</button>
       </div>
-
+ 
       <div class="card" style="margin-bottom:16px;">
         <div class="stat-label">Portfolio-Gesamtwert (Ist) für diesen Monat</div>
         <input type="number" step="0.01" id="month-portfolio-value" placeholder="z.B. 12500" style="font-size:20px; font-weight:700; padding:6px 0; background:transparent; border:none;">
         <div class="reset-hint" id="month-portfolio-hint"></div>
       </div>
-
+ 
       <div class="card">
         <div class="stat-label" style="margin-bottom:12px;">Assets (optional, zur Aufschlüsselung)</div>
         <div id="asset-rows"></div>
@@ -239,16 +253,16 @@
           <button class="btn ghost small" id="copy-prev">Von Vormonat übernehmen</button>
         </div>
       </div>
-
+ 
       <div class="toolbar">
         <span class="reset-hint" id="month-soll-hint"></span>
       </div>
     </div>
-
+ 
     <!-- SETTINGS -->
     <div class="page" id="page-settings">
       <h1>Einstellungen</h1>
-
+ 
       <div class="card" style="margin-bottom:22px;">
         <div class="field-row">
           <div class="field">
@@ -275,7 +289,7 @@
           <input type="number" id="set-planend" style="max-width:140px;">
         </div>
       </div>
-
+ 
       <div class="section-title" style="margin-top:0;">Sonderzahlungen pro Jahr</div>
       <div class="tbl-wrap" style="margin-bottom:22px;">
         <table>
@@ -283,7 +297,7 @@
           <tbody id="bonus-table"></tbody>
         </table>
       </div>
-
+ 
       <div class="toolbar">
         <button class="btn" id="save-settings">Speichern &amp; neu berechnen</button>
         <button class="btn secondary" id="export-json">Backup exportieren (.json)</button>
@@ -292,16 +306,16 @@
         <input type="file" id="import-file" accept="application/json" style="display:none;">
       </div>
     </div>
-
+ 
   </div>
 </div>
-
+ 
 <div class="toast" id="toast"></div>
-
+ 
 <script defer>
 /* ============================= SEED DATA ============================= */
-const SEED_MONTHLY = {"2025-10":[{"name":"Apple","value":50},{"name":"Nvidia","value":100},{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"Rheinmetall","value":100},{"name":"SOFI","value":100},{"name":"MSCI World","value":50},{"name":"AI & Big Data","value":50}],"2025-11":[{"name":"Einhell","value":84.5},{"name":"Bitcoin","value":50},{"name":"MSCI World","value":50},{"name":"AI & Big Data","value":50}],"2025-12":[{"name":"Einhell","value":84.9},{"name":"Bitcoin","value":50},{"name":"S&P 500","value":25},{"name":"MSCI World","value":75},{"name":"S&P 500 I&T","value":0}],"2026-01":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":722.99},{"name":"Tesla","value":75},{"name":"SOFI","value":101},{"name":"MSCI World","value":0},{"name":"S&P 500","value":244.22}],"2026-02":[{"name":"Einhell","value":0},{"name":"Tesla","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":25},{"name":"MSCI World","value":25},{"name":"S&P 500 I&T","value":0}],"2026-03":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":100},{"name":"S&P 500","value":50},{"name":"MSCI World","value":150},{"name":"S&P 500 I&T","value":0}],"2026-04":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":0},{"name":"MSCI World","value":0},{"name":"MSCI EM","value":45.36}],"2026-05":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":100},{"name":"S&P 500","value":50},{"name":"MSCI World","value":150},{"name":"S&P 500 I&T","value":0}],"2026-06":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":0},{"name":"MSCI World","value":200},{"name":"MSCI W. EM","value":50}],"2026-07":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"S&P 500 I&T","value":0}],"2026-08":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"AI & Big Data","value":0}],"2026-09":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"AI & Big Data","value":0}],"2026-10":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"AI & Big Data","value":0}],"2026-11":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":500},{"name":"MSCI W. EM","value":1000},{"name":"MSCI World","value":3500},{"name":"AI & Big Data","value":0}],"2026-12":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"AI & Big Data","value":0}],"2027-01":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-02":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-03":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-04":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-05":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-06":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-07":[{"name":"Einhell","value":400},{"name":"Bitcoin","value":600},{"name":"MSCI W. EM","value":500},{"name":"MSCI World","value":1500},{"name":"S&P 500 I&T","value":0}],"2027-08":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-09":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-10":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}],"2027-11":[{"name":"Einhell","value":850},{"name":"Bitcoin","value":750},{"name":"MSCI W. EM","value":1100},{"name":"MSCI World","value":2300},{"name":"AI & Big Data","value":0}],"2027-12":[{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"MSCI W. EM","value":180},{"name":"MSCI World","value":420},{"name":"AI & Big Data","value":0}]};
-
+const SEED_MONTHLY = {"2025-10":[{"name":"Apple","value":50},{"name":"Nvidia","value":100},{"name":"Einhell","value":85},{"name":"Bitcoin","value":100},{"name":"Rheinmetall","value":100},{"name":"SOFI","value":100},{"name":"MSCI World","value":50},{"name":"AI & Big Data","value":50}],"2025-11":[{"name":"Einhell","value":84.5},{"name":"Bitcoin","value":50},{"name":"MSCI World","value":50},{"name":"AI & Big Data","value":50}],"2025-12":[{"name":"Einhell","value":84.9},{"name":"Bitcoin","value":50},{"name":"S&P 500","value":25},{"name":"MSCI World","value":75},{"name":"S&P 500 I&T","value":0}],"2026-01":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":722.99},{"name":"Tesla","value":75},{"name":"SOFI","value":101},{"name":"MSCI World","value":0},{"name":"S&P 500","value":244.22}],"2026-02":[{"name":"Einhell","value":0},{"name":"Tesla","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":25},{"name":"MSCI World","value":25},{"name":"S&P 500 I&T","value":0}],"2026-03":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":100},{"name":"S&P 500","value":50},{"name":"MSCI World","value":150},{"name":"S&P 500 I&T","value":0}],"2026-04":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":0},{"name":"MSCI World","value":0},{"name":"MSCI EM","value":45.36}],"2026-05":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":100},{"name":"S&P 500","value":50},{"name":"MSCI World","value":150},{"name":"S&P 500 I&T","value":0}],"2026-06":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":0},{"name":"S&P 500","value":0},{"name":"MSCI World","value":200},{"name":"MSCI W. EM","value":50}],"2026-07":[{"name":"Einhell","value":0},{"name":"Bitcoin","value":50},{"name":"MSCI W. EM","value":200},{"name":"MSCI World","value":450},{"name":"S&P 500 I&T","value":0}]};
+ 
 const SEED_SETTINGS = {
   startValue: 3000,
   annualReturn: 0.07,
@@ -316,7 +330,7 @@ const SEED_SETTINGS = {
     2030: { jun: 1500, nov: 3500 }
   }
 };
-
+ 
 function seedState(){
   return {
     settings: JSON.parse(JSON.stringify(SEED_SETTINGS)),
@@ -327,11 +341,11 @@ function seedState(){
     currentPortfolioOverride: null
   };
 }
-
+ 
 /* ============================= STATE ============================= */
 const STORE_KEY = "investitionsplan_v1";
 let STATE = loadState();
-
+ 
 function loadState(){
   try{
     const raw = localStorage.getItem(STORE_KEY);
@@ -353,7 +367,7 @@ function toast(msg){
   clearTimeout(toast._h);
   toast._h = setTimeout(()=>t.classList.remove('show'), 1800);
 }
-
+ 
 /* ============================= HELPERS ============================= */
 const MONTH_NAMES = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
 function fmtEUR(v){
@@ -417,7 +431,7 @@ function diffBadge(diff, soll){
   const sign = diff>=0 ? '+' : '';
   return `${sign}${fmtEUR(diff)}${pct!==null ? ` <span class="stat-sub" style="display:inline;">(${sign}${pct.toFixed(1)}%)</span>` : ''}`;
 }
-
+ 
 /* ---- Soll (target) trajectory, replicating the spreadsheet compound formula ---- */
 function computeSollSeries(){
   const s = STATE.settings;
@@ -469,7 +483,7 @@ function yearsRange(){
   const arr=[]; for(let y=startY;y<=endY;y++) arr.push(y);
   return arr;
 }
-
+ 
 /* ============================= NAVIGATION ============================= */
 document.querySelectorAll('.nav-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
@@ -483,7 +497,7 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
     if(btn.dataset.page==='settings') renderSettings();
   });
 });
-
+ 
 /* ============================= DASHBOARD ============================= */
 function renderDashboard(){
   const nowKey = currentRealMonthKey();
@@ -492,10 +506,10 @@ function renderDashboard(){
   const sollNow = sollForMonth(nowKey);
   const diff = (istNow!==null && sollNow!==null) ? (istNow - sollNow) : null;
   const diffPct = (diff!==null && sollNow) ? (diff/sollNow*100) : null;
-
+ 
   const latestKey = latestTrackedKey();
   const isOverride = STATE.currentPortfolioOverride !== null && STATE.currentPortfolioOverride !== undefined && STATE.currentPortfolioOverride !== '';
-
+ 
   const statsHtml = `
     <div class="card">
       <div class="stat-label">Aktueller Portfolio-Wert</div>
@@ -509,17 +523,18 @@ function renderDashboard(){
     </div>
     <div class="card">
       <div class="stat-label">Differenz zum Plan</div>
-      <div class="stat-value ${diff!==null ? (diff>=0?'pos':'neg') : ''}">${diff!==null ? (diff>=0?'+':'')+fmtEUR(diff) : '–'}</div>
-      <div class="stat-sub ${diffPct!==null ? (diffPct>=0?'pos':'neg') : ''}">${diffPct!==null ? ((diffPct>=0?'+':'')+diffPct.toFixed(1)+'% zum Soll') : ''}</div>
+      <div class="stat-value ${diffPct!==null ? (diffPct>=0?'pos':'neg') : ''}" style="font-size:30px;">${diffPct!==null ? ((diffPct>=0?'+':'')+diffPct.toFixed(1)+'%') : '–'}</div>
+      <div class="stat-sub ${diff!==null ? (diff>=0?'pos':'neg') : ''}">${diff!==null ? ((diff>=0?'+':'')+fmtEUR(diff)+' zum Soll') : ''}</div>
     </div>
   `;
   document.getElementById('dash-stats').innerHTML = statsHtml;
-
+  document.getElementById('dash-date').textContent = 'Stand: ' + new Date().toLocaleDateString('de-DE', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+ 
   document.getElementById('ist-now-input').addEventListener('change', (e)=>{
     STATE.currentPortfolioOverride = e.target.value === '' ? null : Number(e.target.value);
     saveState(); renderDashboard();
   });
-
+ 
   // year table
   const years = yearsRange();
   let rows = '';
@@ -542,7 +557,7 @@ function renderDashboard(){
     </tr>`;
   });
   document.getElementById('dash-year-table').innerHTML = rows;
-
+ 
   document.querySelectorAll('.dash-ist-input').forEach(inp=>{
     inp.addEventListener('change', ()=>{
       const y = inp.dataset.year;
@@ -556,10 +571,10 @@ function renderDashboard(){
       saveState(); renderDashboard();
     });
   });
-
+ 
   drawChart();
 }
-
+ 
 /* Self-contained SVG chart — monthly Soll vs. Ist, no external library/CDN required
    (this avoids the previous Chart.js-via-CDN approach, which silently failed to render
    whenever the CDN was blocked or unreachable). Scales fluidly via viewBox. */
@@ -579,29 +594,29 @@ function drawChart(){
   const series = computeSollSeries();
   const keys = Object.keys(series).sort();
   if(keys.length===0){ wrap.innerHTML = `<div class="empty-hint">Keine Daten</div>`; return; }
-
+ 
   const sollVals = keys.map(k=>series[k].ende);
   const istVals = keys.map(k=>istForMonth(k));
-
+ 
   const W = 1000, H = 320;
   const padL = 92, padR = 16, padT = 16, padB = 34;
   const plotW = W - padL - padR;
   const plotH = H - padT - padB;
   const n = keys.length;
-
+ 
   const known = [...sollVals, ...istVals.filter(v=>v!==null)];
   const maxV = Math.max(...known, 1);
   const minV = Math.min(0, ...known);
-
+ 
   const step = niceAxisStep(maxV - minV);
   const gridBottom = Math.floor(minV/step)*step;
   const gridTop = Math.ceil(maxV/step)*step;
   const range = (gridTop - gridBottom) || 1;
   const gridCount = Math.round((gridTop - gridBottom)/step);
-
+ 
   const xFor = (i)=> padL + (n<=1 ? 0 : (i/(n-1))*plotW);
   const yFor = (v)=> padT + plotH - ((v-gridBottom)/range)*plotH;
-
+ 
   // horizontal gridlines + y labels, in clean 10.000 €-steps
   let gridSvg = '';
   for(let g=0; g<=gridCount; g++){
@@ -610,7 +625,7 @@ function drawChart(){
     gridSvg += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W-padR}" y2="${y.toFixed(1)}" stroke="#20242e" stroke-width="1"/>`;
     gridSvg += `<text x="${padL-10}" y="${(y+4).toFixed(1)}" text-anchor="end" font-size="12" fill="#8a90a2" font-family="-apple-system, Helvetica Neue, Arial, sans-serif">${fmtEURAxis(v)}</text>`;
   }
-
+ 
   // x-axis month labels (thinned so they don't overlap)
   const labelEvery = Math.max(1, Math.ceil(n/11));
   let xLabelsSvg = '';
@@ -620,10 +635,10 @@ function drawChart(){
       xLabelsSvg += `<text x="${xFor(i).toFixed(1)}" y="${H-padB+22}" text-anchor="middle" font-size="11" fill="#8a90a2" font-family="-apple-system, Helvetica Neue, Arial, sans-serif">${MONTH_NAMES[m-1].slice(0,3)} '${String(y).slice(2)}</text>`;
     }
   });
-
+ 
   // Soll: one continuous line across the whole plan
   const sollPoints = sollVals.map((v,i)=> `${xFor(i).toFixed(1)},${yFor(v).toFixed(1)}`).join(' ');
-
+ 
   // Ist: draw only across contiguous stretches of known months (don't bridge gaps)
   let segments = [], current = [];
   istVals.forEach((v,i)=>{
@@ -636,7 +651,7 @@ function drawChart(){
   ).join('');
   const istDots = istVals.map((v,i)=> v===null ? '' : `<circle cx="${xFor(i).toFixed(1)}" cy="${yFor(v).toFixed(1)}" r="3.5" fill="#39d98a"><title>${MONTH_NAMES[parseKey(keys[i]).m-1]} ${parseKey(keys[i]).y} — Ist: ${fmtEUR(v)}</title></circle>`).join('');
   const sollHover = sollVals.map((v,i)=> `<circle cx="${xFor(i).toFixed(1)}" cy="${yFor(v).toFixed(1)}" r="8" fill="transparent"><title>${MONTH_NAMES[parseKey(keys[i]).m-1]} ${parseKey(keys[i]).y} — Soll: ${fmtEUR(v)}</title></circle>`).join('');
-
+ 
   wrap.innerHTML = `
     <div class="chart-svg-box">
       <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" overflow="visible" style="width:100%; height:100%; display:block; overflow:visible;">
@@ -656,7 +671,7 @@ function drawChart(){
     </div>
   `;
 }
-
+ 
 /* ============================= ETAPPENZIELE ============================= */
 function renderEtappen(){
   const years = yearsRange();
@@ -670,7 +685,7 @@ function renderEtappen(){
     rows += `<tr>
       <td style="font-weight:600;">${y}</td>
       <td>
-        <input type="number" step="0.01" class="etappen-input" data-year="${y}" value="${(override!==undefined&&override!==null&&override!=='')?override:Math.round(calc)}">
+        <input type="number" step="0.01" class="etappen-input" data-year="${y}" value="${(override!==undefined&&override!==null&&override!=='')?override:Math.round(calc)}" style="max-width:100px;">
         <div class="reset-hint">berechnet: ${fmtEUR(calc)} · <a class="linklike" data-reset="${y}">zurücksetzen</a></div>
       </td>
       <td>${ist!==null?fmtEUR(ist):'<span class="badge dim">noch offen</span>'}</td>
@@ -678,7 +693,7 @@ function renderEtappen(){
     </tr>`;
   });
   document.getElementById('etappen-table').innerHTML = rows;
-
+ 
   document.querySelectorAll('.etappen-input').forEach(inp=>{
     inp.addEventListener('change', ()=>{
       const y = inp.dataset.year;
@@ -693,9 +708,9 @@ function renderEtappen(){
       saveState(); renderEtappen();
     });
   });
-
+ 
 }
-
+ 
 /* ============================= MONTHLY TRACKING ============================= */
 let currentMonthKey = null;
 function allPossibleMonthKeys(){
@@ -717,10 +732,10 @@ function renderMonthly(){
     const {y,m} = parseKey(k);
     return `<option value="${k}" ${k===currentMonthKey?'selected':''}>${MONTH_NAMES[m-1]} ${y}</option>`;
   }).join('');
-
+ 
   const {y,m} = parseKey(currentMonthKey);
   document.getElementById('m-title').textContent = `${MONTH_NAMES[m-1]} ${y}`;
-
+ 
   const assets = STATE.monthly[currentMonthKey] || [];
   const rowsEl = document.getElementById('asset-rows');
   if(assets.length===0){
@@ -733,7 +748,7 @@ function renderMonthly(){
         <button class="btn danger small" data-del="${i}">✕</button>
       </div>`).join('');
   }
-
+ 
   // direct portfolio value field
   const pv = document.getElementById('month-portfolio-value');
   const override = STATE.monthlyPortfolioOverrides[currentMonthKey];
@@ -742,7 +757,7 @@ function renderMonthly(){
   const hint = document.getElementById('month-portfolio-hint');
   const hasOverride = override!==undefined && override!==null && override!=='';
   hint.innerHTML = hasOverride ? `<a class="linklike" id="reset-month-portfolio">aus Assets übernehmen</a>` : 'Dieser Wert wird als Ist-Wert in der Grafik verwendet.';
-
+ 
   const resetLink = document.getElementById('reset-month-portfolio');
   if(resetLink){
     resetLink.addEventListener('click', ()=>{
@@ -750,10 +765,10 @@ function renderMonthly(){
       saveState(); renderMonthly();
     });
   }
-
+ 
   const soll = sollForMonth(currentMonthKey);
   document.getElementById('month-soll-hint').textContent = soll!==null ? `Soll zu diesem Zeitpunkt laut Plan: ${fmtEUR(soll)}` : '';
-
+ 
   // bind
   rowsEl.querySelectorAll('.asset-name').forEach(inp=>{
     inp.addEventListener('input', ()=>{
@@ -775,7 +790,7 @@ function renderMonthly(){
   });
 }
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
+ 
 document.getElementById('m-select').addEventListener('change', (e)=>{ currentMonthKey = e.target.value; renderMonthly(); });
 document.getElementById('m-prev').addEventListener('click', ()=>{
   const keys = allPossibleMonthKeys(); const idx = keys.indexOf(currentMonthKey);
@@ -804,7 +819,7 @@ document.getElementById('month-portfolio-value').addEventListener('change', (e)=
   STATE.monthlyPortfolioOverrides[currentMonthKey] = e.target.value === '' ? null : Number(e.target.value);
   saveState(); renderMonthly();
 });
-
+ 
 /* ============================= SETTINGS ============================= */
 function renderSettings(){
   const s = STATE.settings;
@@ -813,7 +828,7 @@ function renderSettings(){
   document.getElementById('set-monthly').value = s.monthlyInvestment;
   document.getElementById('set-planstart').value = s.planStart;
   document.getElementById('set-planend').value = s.planEnd;
-
+ 
   const years = yearsRange();
   document.getElementById('bonus-table').innerHTML = years.map(y=>{
     const b = s.bonuses[y] || {jun:0,nov:0};
@@ -831,7 +846,7 @@ document.getElementById('save-settings').addEventListener('click', ()=>{
   s.monthlyInvestment = Number(document.getElementById('set-monthly').value)||0;
   s.planStart = document.getElementById('set-planstart').value.trim() || s.planStart;
   s.planEnd = Number(document.getElementById('set-planend').value)||s.planEnd;
-
+ 
   document.querySelectorAll('.bonus-jun').forEach(inp=>{
     const y = inp.dataset.year;
     if(!s.bonuses[y]) s.bonuses[y] = {jun:0,nov:0};
@@ -880,7 +895,7 @@ document.getElementById('reset-all').addEventListener('click', ()=>{
     toast('Zurückgesetzt');
   }
 });
-
+ 
 /* ============================= INIT ============================= */
 function renderAll(){
   renderDashboard();
@@ -892,3 +907,4 @@ renderAll();
 </script>
 </body>
 </html>
+ 
